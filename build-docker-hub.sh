@@ -7,7 +7,7 @@ set -e
 
 # Configuration
 DOCKER_IMAGE="zxdong262/electerm-builder-legacy"
-VERSION="1.0.0"  # Ubuntu 18.04 + Python 3.8 + Node.js 16 + GCC 8
+VERSION="1.0.1"  # Ubuntu 18.04 + Python 3.8 + Node.js 16 + GCC 8
 
 echo "🚀 Building and publishing electerm-builder-legacy Docker image..."
 echo "   Image: $DOCKER_IMAGE"

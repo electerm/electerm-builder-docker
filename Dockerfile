@@ -9,13 +9,13 @@ LABEL maintainer="ZHAO Xudong <zxdong@gmail.com>"
 LABEL description="This is Docker image for building legacy electerm for old linux systems"
 LABEL url="https://github.com/electerm/electerm-builder-docker"
 LABEL vendor="electerm"
-LABEL version="1.0.0"
+LABEL version="1.0.1"
 LABEL org.opencontainers.image.title="electerm-builder-legacy"
 LABEL org.opencontainers.image.description="Ubuntu 18.04 with Python 3.8, Node.js 16, and GCC 8 for building legacy electerm"
 LABEL org.opencontainers.image.url="https://github.com/electerm/electerm-builder-docker"
 LABEL org.opencontainers.image.source="https://github.com/electerm/electerm-builder-docker"
 LABEL org.opencontainers.image.vendor="electerm"
-LABEL org.opencontainers.image.version="1.0.0"
+LABEL org.opencontainers.image.version="1.0.1"
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -94,18 +94,8 @@ RUN gem install fpm
 # Install yarn globally
 RUN npm install -g yarn
 
-# Create a non-root user for building
-RUN useradd -m -s /bin/bash builder && \
-    usermod -aG sudo builder
-
 # Set working directory
 WORKDIR /workspace
-
-# Change ownership to builder user
-RUN chown -R builder:builder /workspace
-
-# Switch to builder user
-USER builder
 
 # Set default command
 CMD ["/bin/bash"]
