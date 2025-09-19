@@ -66,6 +66,10 @@ RUN useradd -m -s /bin/bash builder
 # Set working directory
 WORKDIR /workspace
 
+# Copy validation script
+COPY validate-environment.sh /workspace/
+RUN chmod +x /workspace/validate-environment.sh
+
 # Change ownership of workspace to builder user
 RUN chown -R builder:builder /workspace
 

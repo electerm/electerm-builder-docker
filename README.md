@@ -41,6 +41,13 @@ npm install
 npm run build
 ```
 
+#### Validate the build environment:
+
+```bash
+# Run validation script to verify all tools are working
+./validate-environment.sh
+```
+
 ### Included Tools
 
 - **GCC 8**: Set as default compiler
